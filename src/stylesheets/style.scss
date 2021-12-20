@@ -1,0 +1,15 @@
+// testing use
+h1 {
+  color: red;
+}
+
+// reset CSS
+@import "reset";
+
+/* ------- basic setting ------- */
+@import "variables";
+@import "mixins";
+@import "placeholder-selectors";
+
+/* ------- project styles starts here ------- */
+@import "basic";
