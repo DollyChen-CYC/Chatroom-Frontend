@@ -10,14 +10,16 @@ const App = () => {
   return (
     <div className='App'>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<PublicChatroom />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/public" element={<PublicChatroom />} />
-        <Route path="/message/" element={<PrivateMessages />} />
-        <Route path="/message/:id" element={<PrivateMessages />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<PublicChatroom />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/public" element={<PublicChatroom />} />
+          <Route path="/message/" element={<PrivateMessages />} />
+          <Route path="/message/:id" element={<PrivateMessages />} />
+        </Routes>
+      </main>
     </div>
   )
 }

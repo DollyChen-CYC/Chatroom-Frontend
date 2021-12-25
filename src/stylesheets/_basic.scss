@@ -1,7 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC&display=swap');
 
 body {
+  height: 100vh;
+  width: 100vw;
   font-family: $standard-font-family;
   font-size: $standard-font-size;
   color: $text-black;
+  cursor: default;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid $border-gray;
+  border-right: 1px solid $border-gray;
+
+  header {
+    height: $header-height;
+    width: 100%;
+    border-bottom: 1px solid $border-gray;
+  }
+
+  main {
+    height: calc(100vh - $header-height);
+
+    // target the root div element of each React page:
+    > div {
+      height: 100%;
+      width: 100%;
+      overflow-y: hidden;
+      display: flex;
+    }
+    .left-info-section {
+      border-right: 1px solid $border-gray;
+      height: 100%;
+      min-width: 200px;
+      overflow-y: auto;
+      @extend %hidden-scrollbar-setting;
+      flex-basis: 390px;
+      flex-shrink: 1;
+    }
+    .right-chat-section {
+      height: 100%;
+      min-width: 300px;
+      overflow-y: auto;
+      @extend %hidden-scrollbar-setting;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  }
+}
+
+// Style settings for general components
+button,
+.btn {
+  padding: 7px 18px;
+  border-radius: 100px;
+  background-color: $theme-blue;
+  font-size: 18px;
+  font-weight: 500;
+  color: $text-white;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    opacity: 1;
+  }
+  transition: all 0.07s ease-in-out;
+}
+
+.link {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    color: $text-dark-blue;
+  }
+}
+
+.close-cross {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-image: url('../assets/images/cross.svg');
+  cursor: pointer;
 }
