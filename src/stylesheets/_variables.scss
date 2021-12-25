@@ -1,8 +1,9 @@
 // color setting
+$theme-blue: #0e76a8;
 $text-white: #ffffff;
 $text-black: #1c1c1c;
+$text-dark-blue: #0a4e6d;
 $text-gray: #657786;
-$ac-orange: #ff6600;
 $link-skyblue: #0099ff;
 $default-hint-color: #657786;
 $active-hint-color: #50b5ff;
@@ -23,3 +24,6 @@ $phone-width: 375px;
 $pad-width: 540px;
 $pc-width: 900px;
 $max-width: 1056px;
+
+// length parameter
+$header-height: 80px;

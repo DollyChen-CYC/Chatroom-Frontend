@@ -1,7 +1,15 @@
+import MessageInbox from '../components/MessageInbox'
+import MessageWindow from '../components/MessageWindow'
+
 const privateMessages = () => {
   return (
     <div>
-      <h1> This is title of private messages for testing </h1>
+      <section className="left-info-section">
+        <MessageInbox />
+      </section>
+      <section className="right-chat-section">
+        <MessageWindow />
+      </section>
     </div>
   )
 }
