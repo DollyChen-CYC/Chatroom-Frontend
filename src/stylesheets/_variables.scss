@@ -11,12 +11,14 @@ $error-hint-color: #fc5a5a;
 $input-bg-color: #f5f8fa;
 $border-gray: #e6ecf0;
 $like-red: #e0245e;
+$white-bg: #ffffff;
+$hover-hint-bg: #fbfbfb;
 $status-pill-bg: #e5e5e5;
 $chat-bubble-bg: #e6ecf0;
 
 // font-setting
-$standard-font-family: "Noto Sans TC", sans-serif;
-$brand-font-family: "Lato", "Noto Sans TC", sans-serif;
+$standard-font-family: 'Noto Sans TC', sans-serif;
+$brand-font-family: 'Lato', 'Noto Sans TC', sans-serif;
 $standard-font-size: 16px;
 
 // RWD setting
@@ -25,5 +27,6 @@ $pad-width: 540px;
 $pc-width: 900px;
 $max-width: 1056px;
 
-// length parameter
+// scale parameter
+$app-max-width: 1200px;
 $header-height: 80px;

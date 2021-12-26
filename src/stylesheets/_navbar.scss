@@ -1,0 +1,128 @@
+// 高度被以變數的方式列在 sass _variables 中 $header-height: 80px;
+// 影響 _basic 裏面 main 的高度
+header {
+  position: relative;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  grid-gap: 0.5rem;
+  align-items: center;
+  box-shadow: 0px 3px 5px 3px rgba(224, 228, 233, 0.1);
+
+  .DDTM-logo {
+    margin: 0 auto;
+    height: 30px;
+    width: 90px;
+    background-image: url('../assets/images/DDTMicon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    // to set the logo in the center:
+    transform: translateX(20px);
+  }
+
+  .navbar-toggle-label {
+    height: 22px;
+    width: 22px;
+    background-image: url('../assets/images/Hamburger_icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    @include pc-media {
+      display: none;
+    }
+  }
+
+  nav {
+    position: absolute;
+    top: $header-height;
+    z-index: 5;
+    width: 100vw;
+    box-shadow: 0px 5px 5px 3px rgba(224, 228, 233, 0.1);
+    opacity: 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: all 0.3s ease-in-out;
+
+    @include pc-media {
+      opacity: 1;
+      transform: scale(1, 1);
+      top: 0;
+      height: $header-height;
+      width: 100vw;
+      max-width: $app-max-width;
+      padding: 0 22px;
+    }
+
+    .nav-list {
+      text-align: center;
+      font-weight: 700;
+      font-size: 18px;
+      @include pc-media {
+        display: grid;
+        grid-template-columns: repeat(2, 100px) minmax(90px, 1fr) repeat(
+            2,
+            100px
+          );
+        grid-template-areas: 'link1 link2 logo link3 link4';
+        column-gap: 25px;
+      }
+
+      &__item {
+        padding: 15px;
+        background-color: $white-bg;
+        cursor: pointer;
+        border-bottom: 1px solid $border-gray;
+        &:hover {
+          background-color: $hover-hint-bg;
+        }
+        &:active {
+          background-color: $input-bg-color;
+        }
+
+        @include pc-media {
+          margin: 0 auto;
+          padding: 0;
+          width: fit-content;
+          background-color: transparent;
+          height: $header-height;
+          line-height: $header-height;
+          border-bottom: none;
+
+          // setting of grid-area create with Sass interpolation
+          @each $order in (1, 2, 3, 4) {
+            &:nth-child(#{$order}) {
+              grid-area: link#{$order};
+            }
+          }
+          // the above code will create a series CSS style such as :
+          // &:nth-child(3) {
+          //   grid-area: link3;
+          // }
+
+          &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+          }
+          &:active {
+            background-color: transparent;
+            color: $text-dark-blue;
+          }
+        }
+
+        &__link.active {
+          color: $theme-blue;
+        }
+      }
+    }
+  }
+
+  #navbar-toggle {
+    display: none;
+    &:checked {
+      ~ label ~ nav {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+    }
+  }
+}
