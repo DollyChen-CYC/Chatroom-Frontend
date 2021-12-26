@@ -1,4 +1,4 @@
-import { Routes, Route, useParams } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import PublicChatroom from '../src/pages/PublicChatroom'
 import PrivateMessages from './pages/PrivateMessages'
