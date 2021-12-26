@@ -18,6 +18,7 @@ const App = () => {
           <Route path="/public" element={<PublicChatroom />} />
           <Route path="/message/" element={<PrivateMessages />} />
           <Route path="/message/:id" element={<PrivateMessages />} />
+          <Route path="*" element={<h1> 404 Page Not Found.</h1>} />
         </Routes>
       </main>
     </div>
