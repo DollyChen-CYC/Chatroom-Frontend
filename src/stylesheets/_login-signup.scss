@@ -1,0 +1,85 @@
+.login {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__headline {
+    padding: 30px;
+    color: $theme-blue;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 46px;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 540px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.login, .sign-up {
+  .form-row {
+      width: 100%;
+      height: 52px;
+      position: relative;
+      background-color: $input-bg-color;
+      &__label {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-size: 15px;
+        line-height: 15px;
+        font-weight: 500;
+        color: $default-hint-color;
+      }
+      &__input {
+        width: 100%;
+        padding: 18px 10px 4px 10px;
+        border-color: transparent;
+        border-bottom: 2px solid $default-hint-color;
+        // active & error 要是另一個底色樣式
+        background-color: transparent;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 28px;
+        color: $text-black;
+        vertical-align: text-bottom;
+        &:hover,
+        &:active,
+        &:focus {
+          border-bottom: 2px solid $active-hint-color;
+        }
+        &.invalid {
+          border-bottom: 2px solid $error-hint-color;
+        }
+      }
+      &__length-counter {
+        position: absolute;
+        bottom: -22px;
+        right: 0;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 15px;
+        color: $default-hint-color;
+      }
+      &__error-message {
+        margin: 5px 0;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 15px;
+        color: $error-hint-color;
+      }
+    }
+  .link {
+    color: $link-skyblue;
+    &:hover {
+      color: $text-dark-blue;
+    }
+  }
+}
