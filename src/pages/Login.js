@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import authorizationAPI from '../api/authorization.js'
+import { useDispatch } from 'react-redux'
+import { setCurrentUser } from '../store/slice/users.js'
 
 const Login = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   const [account, setAccount] = useState('')
   function handleAccountChange(event) {
     setAccount(event.target.value)
@@ -40,7 +46,32 @@ const Login = () => {
   function formSubmit(event) {
     event.preventDefault()
     if (formValidation()) {
-      console.log('TODO - login API')
+      handleUserLogin()
+    }
+  }
+
+  async function handleUserLogin() {
+    try {
+      // TODO: login API (v)
+      // TODO: isProcessing
+      // TODO: SweetAlert
+      // TODO: setCurrentUser, Token (v)
+      // TODO: redirect to public chatroom (v)
+      const response = await authorizationAPI.signIn({ account, password })
+      const { data } = response
+      if (data.status !== 'success') {
+        console.log(data.message) // TODO: SweetAlert
+        throw new Error(data.message)
+      }
+
+      // save Token
+      localStorage.setItem('token', data.token)
+      // set currentUser to Redux
+      dispatch(setCurrentUser(data.user))
+      navigate('/public')
+
+    } catch (error) {
+      console.log(error)
     }
   }
 
