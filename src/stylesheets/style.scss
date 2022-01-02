@@ -10,8 +10,10 @@ h1 {
 @import "variables";
 @import "mixins";
 @import "placeholder-selectors";
+@import "font-styles";
 
 /* ------- project styles starts here ------- */
 @import "basic";
 @import "navbar";
 @import "login-signup";
+@import "publicChatroom";

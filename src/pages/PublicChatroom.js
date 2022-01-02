@@ -1,9 +1,17 @@
+import OnlineUserList from "../components/OnlineUserList";
+import ChatWindow from "../components/ChatWindow";
+
 const publicChatroom = () => {
   return (
     <div>
-      <h1>This is H1 headline of PublicChatroom for testing</h1>
+      <section className="left-info-section">
+        <OnlineUserList />
+      </section>
+      <section className="right-chat-section">
+        <ChatWindow />
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default publicChatroom
+export default publicChatroom;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+TC&display=swap");
 
 body {
   height: 100vh;
@@ -34,21 +34,29 @@ body {
       display: flex;
     }
     .left-info-section {
+      display: none;
       border-right: 1px solid $border-gray;
       height: 100%;
-      min-width: 200px;
+
       overflow-y: auto;
       @extend %hidden-scrollbar-setting;
-      flex-basis: 390px;
-      flex-shrink: 1;
+      @include pc-media {
+        display: unset;
+        // min-width: 200px;
+        width: 390px;
+        flex-shrink: 1;
+      }
     }
     .right-chat-section {
       height: 100%;
-      min-width: 300px;
+      width: 100%;
       overflow-y: auto;
       @extend %hidden-scrollbar-setting;
-      flex-grow: 1;
-      flex-shrink: 1;
+      @include pc-media {
+        min-width: 680px;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
     }
   }
 }
@@ -86,6 +94,6 @@ button,
   display: inline-block;
   height: 12px;
   width: 12px;
-  background-image: url('../assets/images/cross.svg');
+  background-image: url("../assets/images/cross.svg");
   cursor: pointer;
 }
