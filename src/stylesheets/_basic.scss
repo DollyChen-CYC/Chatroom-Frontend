@@ -42,7 +42,6 @@ body {
       @extend %hidden-scrollbar-setting;
       @include pc-media {
         display: unset;
-        // min-width: 200px;
         width: 390px;
         flex-shrink: 1;
       }
@@ -53,9 +52,8 @@ body {
       overflow-y: auto;
       @extend %hidden-scrollbar-setting;
       @include pc-media {
-        min-width: 680px;
+        max-width: 700px;
         flex-grow: 1;
-        flex-shrink: 1;
       }
     }
   }
