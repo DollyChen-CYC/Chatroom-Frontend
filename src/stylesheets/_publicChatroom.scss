@@ -2,9 +2,13 @@
 
 .list {
   width: 100%;
+  position: relative;
+
   &__title {
     height: 70px;
-
+    position: sticky;
+    top: 0px;
+    background-color: $white-bg;
     padding: 0 20px;
     text-align: start;
     line-height: 70px;

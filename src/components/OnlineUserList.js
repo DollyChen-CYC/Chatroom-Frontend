@@ -10,12 +10,12 @@ const OnlineUserList = () => {
       <div className="list__users">
         <div className="list__users__card">
           <div className="avatar"></div>
-          <div className="name">apple</div>
+          <div className="name">apple1</div>
           <div className="account">@apple</div>
         </div>
         <div className="list__users__card">
           <div className="avatar"></div>
-          <div className="name">apple</div>
+          <div className="name">apple2</div>
           <div className="account">@apple</div>
         </div>
         <div className="list__users__card">
