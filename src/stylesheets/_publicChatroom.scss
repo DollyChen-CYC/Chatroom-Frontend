@@ -1,0 +1,44 @@
+// online User List
+
+.list {
+  width: 100%;
+  position: relative;
+
+  &__title {
+    height: 70px;
+    position: sticky;
+    top: 0px;
+    background-color: $white-bg;
+    padding: 0 20px;
+    text-align: start;
+    line-height: 70px;
+    border-bottom: 1px solid $border-gray;
+  }
+
+  &__users {
+    display: flex;
+    flex-direction: column;
+
+    &__card {
+      display: flex;
+      height: 70px;
+      align-items: center;
+      border-bottom: 1px solid $border-gray;
+
+      .avatar {
+        margin-left: 15px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: $text-gray;
+      }
+      .name {
+        margin-left: 10px;
+      }
+
+      .account {
+        margin-left: 10px;
+      }
+    }
+  }
+}
