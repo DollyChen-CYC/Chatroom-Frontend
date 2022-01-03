@@ -1,5 +1,4 @@
 // online User List
-
 .list {
   width: 100%;
   position: relative;
@@ -38,6 +37,144 @@
 
       .account {
         margin-left: 10px;
+      }
+    }
+  }
+}
+
+// public chatroom
+.chatroom {
+  height: 100%;
+  &__title {
+    height: 70px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    background-color: $white-bg;
+    padding: 0 20px;
+    text-align: start;
+    line-height: 70px;
+    border-bottom: 1px solid $border-gray;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 70px);
+  }
+
+  &__message {
+    overflow-y: auto;
+    @extend %hidden-scrollbar-setting;
+    display: flex;
+    flex-direction: column;
+
+    &__info {
+      margin: 10px 0px;
+      display: flex;
+      justify-content: center;
+      .info-text {
+        padding: 5px 15px;
+        border-radius: 50px;
+        background-color: $border-gray;
+        font-size: 15px;
+        font-weight: 500;
+        color: $text-gray;
+      }
+    }
+
+    // 收到訊息
+    &__receive {
+      display: flex;
+      margin: 10px 0px;
+      .avatar {
+        margin-left: 10px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: $text-gray;
+      }
+      .wrapper {
+        margin-left: 10px;
+        .message {
+          padding: 10px 18px;
+          background-color: $border-gray;
+          border-radius: 50px 50px 50px 0px;
+          color: $text-black;
+          font-size: 15px;
+          font-weight: 500;
+        }
+        .time {
+          font-size: 13px;
+          font-weight: 500;
+          color: $text-gray;
+        }
+      }
+    }
+
+    // 送出的訊息
+    &__send {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 10px 0px;
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 10px;
+        .message {
+          padding: 10px 18px;
+          background-color: $theme-blue;
+          border-radius: 50px 50px 0px 50px;
+          color: $text-white;
+          font-size: 15px;
+          font-weight: 500;
+        }
+        .time {
+          font-size: 13px;
+          font-weight: 500;
+          color: $text-gray;
+        }
+      }
+    }
+  }
+  &__launch {
+    width: 100%;
+    min-width: 280px;
+    // position: fixed;
+    // bottom: 0px;
+    z-index: 1;
+    height: 55px;
+    padding: 11px 16px;
+    border-top: solid 1px $border-gray;
+    background-color: #fff;
+    &__form {
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+      align-items: center;
+      &__input {
+        height: 32px;
+        width: 100%;
+        padding: 8px 15px;
+        border: transparent;
+        border-radius: 50px;
+        background-color: $border-gray;
+        font-size: 15px;
+        &::placeholder {
+          color: $default-hint-color;
+        }
+      }
+      &__send-btn {
+        border-radius: unset;
+        background-color: unset;
+        padding-left: 5px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../assets/images/icon_send.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
   }
