@@ -49,10 +49,11 @@ body {
     .right-chat-section {
       height: 100%;
       width: 100%;
-      overflow-y: auto;
-      @extend %hidden-scrollbar-setting;
+      // overflow-y: auto;
+      // @extend %hidden-scrollbar-setting;
       @include pc-media {
-        max-width: 700px;
+        // width: 80%;
+        max-width: 810px;
         flex-grow: 1;
       }
     }
