@@ -1,17 +1,26 @@
-.font__black__18__700 {
-  color: $text-black;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.font__black__15__700 {
-  color: $text-black;
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.font__gray__15__500 {
-  color: $text-gray;
-  font-weight: 500;
-  font-size: 15px;
+.font {
+  &__user-list {
+    &__title {
+      color: $text-black;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    &__name {
+      color: $text-black;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    &__account {
+      color: $text-gray;
+      font-weight: 500;
+      font-size: 15px;
+    }
+  }
+  &__chatroom {
+    &__title {
+      color: $text-black;
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
 }
