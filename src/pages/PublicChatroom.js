@@ -1,5 +1,5 @@
-import OnlineUserList from "../components/OnlineUserList";
-import ChatWindow from "../components/ChatWindow";
+import OnlineUserList from '../components/OnlineUserList';
+import ChatWindow from '../components/ChatWindow';
 
 const publicChatroom = () => {
   return (

@@ -69,7 +69,7 @@
     @extend %hidden-scrollbar-setting;
     display: flex;
     flex-direction: column;
-
+    margin-top: auto;
     &__info {
       margin: 10px 0px;
       display: flex;

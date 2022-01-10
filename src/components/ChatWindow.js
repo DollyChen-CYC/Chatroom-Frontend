@@ -1,11 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const ChatWindow = () => {
+  const dummyData = [{}];
+  const [publicMessage, setPublicMessage] = useState([]);
+  const fetchPublicMessage = () => {
+    setPublicMessage(dummyData);
+  };
+  const scrollToBottom = () => {
+    console.log('scrollToBottom');
+    const scrollbar = document.querySelector('.chatroom__message');
+    const scrollHeight = scrollbar.scrollHeight;
+    const height = scrollbar.clientHeight;
+    const maxScrollTop = scrollHeight - height;
+    console.log('scrollheight:', scrollHeight);
+    console.log('height:', height);
+    console.log('maxScrollTop:', maxScrollTop);
+    scrollbar.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+    console.log(scrollbar.scrollTop);
+  };
+  useEffect(() => {
+    scrollToBottom();
+  }, []);
   return (
     <div className="chatroom">
       <div className="chatroom__title">
-        <h1 className="chatroom__title__text font__black__18__700">
+        <h1 className="chatroom__title__text font__chatroom__title">
           公開聊天室
         </h1>
       </div>
